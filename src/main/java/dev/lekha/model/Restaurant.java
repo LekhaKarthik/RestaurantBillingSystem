@@ -25,6 +25,10 @@ public class Restaurant {
 
     public void placeOrder(Order order) {
         orders.add(order);
-        System.out.println("Placing order");
+        System.out.println("Placing order for ");
+        List<MenuItem> menu = order.getItems();
+        for(MenuItem menuItem : menu) {
+            System.out.println("    " + menuItem.getName());
+        }
     }
 }
