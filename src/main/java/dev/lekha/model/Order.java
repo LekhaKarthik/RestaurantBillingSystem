@@ -31,23 +31,4 @@ public class Order {
         });
         return totalPrice[0];
     }
-
-    public void printBill() {
-        System.out.println();
-        System.out.println();
-        System.out.println("***");
-        System.out.println("Order id: " + id);
-        System.out.println("Customer name: " + customer.getName());
-        System.out.println("Customer mobile number: " + customer.getPhone_number());
-        System.out.println("Order items:");
-        items.forEach((item, quantity) -> {
-            System.out.println("* " + item.getName() + " - " + quantity);
-        });
-        System.out.println("Total price: " + total_price);
-        System.out.println("Order status: " + order_status);
-        payment.printPayment();
-        System.out.println("***");
-        System.out.println();
-        System.out.println();
-    }
 }

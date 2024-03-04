@@ -7,6 +7,7 @@ import dev.lekha.factory.RestaurantFactory;
 import dev.lekha.model.Customer;
 import dev.lekha.model.MenuItem;
 import dev.lekha.model.Order;
+import dev.lekha.service.BillPrintingService;
 import dev.lekha.service.RestaurantBillingService;
 
 import java.util.HashMap;
@@ -40,8 +41,7 @@ public class Main {
         restaurantBillingService.takeOrder(order2);
 
         List<Order> orders = restaurantBillingService.getRestaurant().getOrders();
-        for(Order order : orders) {
-            order.printBill();
-        }
+        BillPrintingService billPrintingService = new BillPrintingService(orders);
+        billPrintingService.printBill();
     }
 }
