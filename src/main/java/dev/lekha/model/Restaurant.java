@@ -3,6 +3,7 @@ package dev.lekha.model;
 import lombok.Data;
 
 import java.util.List;
+import java.util.Map;
 
 @Data
 public class Restaurant {
@@ -26,9 +27,9 @@ public class Restaurant {
     public void placeOrder(Order order) {
         orders.add(order);
         System.out.println("Placing order for ");
-        List<MenuItem> menu = order.getItems();
-        for(MenuItem menuItem : menu) {
-            System.out.println("    " + menuItem.getName());
-        }
+        Map<MenuItem, Integer> menu = order.getItems();
+        menu.forEach((item, quantity) -> {
+            System.out.println("    " + item.getName() + " - " + quantity);
+        });
     }
 }

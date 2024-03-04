@@ -12,4 +12,10 @@ public class Payment {
         this.paymentMode = paymentMode;
         this.paymentStatus = paymentStatus;
     }
+
+    public void printPayment() {
+        System.out.println("Payment ID: " + id);
+        System.out.println("Payment Mode: " + paymentMode);
+        System.out.println("Payment Status: " + paymentStatus);
+    }
 }

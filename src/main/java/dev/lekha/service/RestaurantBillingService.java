@@ -3,9 +3,11 @@ package dev.lekha.service;
 import dev.lekha.model.MenuItem;
 import dev.lekha.model.Order;
 import dev.lekha.model.Restaurant;
+import lombok.Getter;
 
 import java.util.List;
 
+@Getter
 public class RestaurantBillingService {
     private final Restaurant restaurant;
 
