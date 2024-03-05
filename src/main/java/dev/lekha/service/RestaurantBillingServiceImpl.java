@@ -8,13 +8,14 @@ import lombok.Getter;
 import java.util.List;
 
 @Getter
-public class RestaurantBillingService {
+public class RestaurantBillingServiceImpl implements RestaurantMenuGenerateService, RestaurantOrderPlaceService {
     private final Restaurant restaurant;
 
-    public RestaurantBillingService(Restaurant restaurant) {
+    public RestaurantBillingServiceImpl(Restaurant restaurant) {
         this.restaurant = restaurant;
     }
 
+    @Override
     public MenuItem getMenuItem(String name) {
         List<MenuItem> menu = restaurant.getMenu();
         for(MenuItem menuItem : menu) {
@@ -25,10 +26,12 @@ public class RestaurantBillingService {
         return null;
     }
 
+    @Override
     public void addMenuItem(MenuItem menuItem) {
         restaurant.addMenuItem(menuItem);
     }
 
+    @Override
     public void takeOrder(Order order) {
         restaurant.placeOrder(order);
     }
